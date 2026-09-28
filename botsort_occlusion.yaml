@@ -1,0 +1,12 @@
+tracker_type: botsort
+track_high_thresh: 0.3    # confident detections used in the first matching pass
+track_low_thresh: 0.1     # low-confidence (often partially occluded) boxes used in a second pass
+new_track_thresh: 0.6     # KEY: a detection must be this confident to create a NEW ID
+track_buffer: 150         # KEY: frames a lost track is remembered (150 ≈ 5 s at 30 fps)
+match_thresh: 0.8         # higher = more lenient matching
+fuse_score: True
+gmc_method: none # camera motion compensation; use "none" if the camera is static
+proximity_thresh: 0.5
+appearance_thresh: 0.25   # lower = trust appearance matches more readily
+with_reid: True           # KEY: use appearance features, not just box motion
+model: auto               # reuse the YOLO model's own features for ReID
